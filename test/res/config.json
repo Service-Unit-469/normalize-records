@@ -1,0 +1,82 @@
+{
+  "primaryKey": "Email",
+  "primarySources": ["Preferred Contact Email", "Email"],
+  "fieldRules": {
+    "Position": {
+      "extractor": {
+        "name": "getValue",
+        "field": "Role Name"
+      },
+      "reducer": "unique"
+    },
+    "Troop": {
+      "extractor": {
+        "name": "getValue",
+        "field": "Troop/Group"
+      },
+      "reducer": "unique"
+    },
+    "Email": {
+      "mappers": [
+        {
+          "name": "replace",
+          "pattern": "@fuse.nete",
+          "replacement": "@fuse.net"
+        }
+      ],
+      "reducer": "first"
+    },
+    "Phone": {
+      "extractor": {
+        "name": "getValue",
+        "field": "Phone Number"
+      },
+      "reducer": "first"
+    },
+    "FirstName": {
+      "extractor": {
+        "name": "getValue",
+        "field": "Preferred Contact First Name",
+        "fallbackField": "First Name"
+      },
+      "reducer": "first"
+    },
+    "LastName": {
+      "extractor": {
+        "name": "getValue",
+        "field": "Preferred Contact Last Name",
+        "fallbackField": "Last Name"
+      },
+      "reducer": "first"
+    },
+    "AllowEmail": {
+      "extractor": {
+        "name": "getValue",
+        "field": "Does member allow email?"
+      },
+      "reducer": {
+        "name": "anyMatch",
+        "pattern": "Y|y",
+        "match": "Y",
+        "nonMatch": "N"
+      }
+    },
+    "CRMLastMod": {
+      "extractor": {
+        "name": "getValue",
+        "field": "Role Assignment Start Date"
+      },
+      "reducer": "highest"
+    },
+    "Status": {
+      "reducer": "first"
+    },
+    "ExpirationDate": {
+      "extractor": {
+        "name": "getValue",
+        "field": "Expiration Date"
+      },
+      "reducer": "lowest"
+    }
+  }
+}
