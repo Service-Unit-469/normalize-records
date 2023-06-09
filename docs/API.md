@@ -25,7 +25,7 @@
 <dt><a href="#lowest">lowest(values)</a></dt>
 <dd><p>Gets the lowest value by natural sort</p>
 </dd>
-<dt><a href="#unique">unique(values)</a></dt>
+<dt><a href="#unique">unique(values, config)</a></dt>
 <dd><p>Gets the unique values</p>
 </dd>
 <dt><a href="#alternateValue">alternateValue(record, config)</a></dt>
@@ -146,7 +146,7 @@ Gets the lowest value by natural sort
 
 <a name="unique"></a>
 
-## unique(values)
+## unique(values, config)
 Gets the unique values
 
 **Kind**: global function  
@@ -154,6 +154,7 @@ Gets the unique values
 | Param | Type |
 | --- | --- |
 | values | <code>Array</code> | 
+| config | <code>Object</code> | 
 
 <a name="alternateValue"></a>
 

@@ -55,11 +55,16 @@ function lowest(values) {
  * Gets the unique values
  *
  * @param {Array} values
+ * @param {{join:string}} config
  */
-function unique(values) {
+function unique(values, config) {
   const un = new Set();
   notBlank(values).forEach((v) => un.add(v));
-  return Array.from(un).sort();
+  if (!config?.join) {
+    return Array.from(un).sort();
+  } else {
+    return Array.from(un).sort().join(config.join);
+  }
 }
 
 export {
