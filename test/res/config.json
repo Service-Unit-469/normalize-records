@@ -3,14 +3,14 @@
   "primarySources": ["Preferred Contact Email", "Email"],
   "fieldRules": {
     "Position": {
-      "extractor": {
+      "source": {
         "name": "getValue",
         "field": "Role Name"
       },
       "reducer": "unique"
     },
     "Troop": {
-      "extractor": {
+      "source": {
         "name": "getValue",
         "field": "Troop/Group"
       },
@@ -27,14 +27,14 @@
       "reducer": "first"
     },
     "Phone": {
-      "extractor": {
+      "source": {
         "name": "getValue",
         "field": "Phone Number"
       },
       "reducer": "first"
     },
     "FirstName": {
-      "extractor": {
+      "source": {
         "name": "getValue",
         "field": "Preferred Contact First Name",
         "fallbackField": "First Name"
@@ -42,7 +42,7 @@
       "reducer": "first"
     },
     "LastName": {
-      "extractor": {
+      "source": {
         "name": "getValue",
         "field": "Preferred Contact Last Name",
         "fallbackField": "Last Name"
@@ -50,7 +50,7 @@
       "reducer": "first"
     },
     "AllowEmail": {
-      "extractor": {
+      "source": {
         "name": "getValue",
         "field": "Does member allow email?"
       },
@@ -62,7 +62,7 @@
       }
     },
     "CRMLastMod": {
-      "extractor": {
+      "source": {
         "name": "getValue",
         "field": "Role Assignment Start Date"
       },
@@ -72,7 +72,7 @@
       "reducer": "first"
     },
     "ExpirationDate": {
-      "extractor": {
+      "source": {
         "name": "getValue",
         "field": "Expiration Date"
       },
