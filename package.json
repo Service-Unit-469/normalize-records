@@ -1,6 +1,6 @@
 {
   "name": "@service-unit-469/normalize-records",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Normalizes duplicate records into the first normal form using configurable functions",
   "main": "src/normalizer.js",
   "bin": {
