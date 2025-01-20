@@ -44,7 +44,7 @@
     "dotenv": "^16.1.4",
     "eslint": "^8.42.0",
     "jsdoc-tsimport-plugin": "^1.0.5",
-    "mocha": "^10.2.0",
+    "mocha": "^11.0.1",
     "semantic-release": "^23.0.8"
   },
   "files": [
