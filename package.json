@@ -33,7 +33,7 @@
   },
   "homepage": "https://github.com/Service-Unit-469/normalize-records#readme",
   "dependencies": {
-    "commander": "^13.1.0"
+    "commander": "^14.0.0"
   },
   "devDependencies": {
     "@adobe/eslint-config-helix": "^2.0.2",
