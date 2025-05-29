@@ -16,9 +16,9 @@ import {
   anyMatch, first, highest, lowest, unique,
 } from '../src/reducers.js';
 
-describe('Reducers Tests', () => {
-  describe('anyMatch', () => {
-    it('can match', () => {
+describe('Reducers Tests', function() {
+  describe('anyMatch', function() {
+    it('can match', function() {
       const value = anyMatch(['y', 'n'], {
         pattern: 'Y|y',
         match: 'Y',
@@ -27,7 +27,7 @@ describe('Reducers Tests', () => {
       assert.strictEqual(value, 'Y');
     });
 
-    it('can not match', () => {
+    it('can not match', function() {
       const value = anyMatch(['a', 'n'], {
         pattern: 'Y|y',
         match: 'Y',
@@ -36,7 +36,7 @@ describe('Reducers Tests', () => {
       assert.strictEqual(value, 'N');
     });
 
-    it('will get nonmatch nothing', () => {
+    it('will get nonmatch nothing', function() {
       const value = anyMatch([], {
         pattern: 'Y|y',
         match: 'Y',
@@ -46,54 +46,54 @@ describe('Reducers Tests', () => {
     });
   });
 
-  describe('first', () => {
-    it('can get first value', () => {
+  describe('first', function() {
+    it('can get first value', function() {
       const value = first(['y', 'n']);
       assert.strictEqual(value, 'y');
     });
 
-    it('will get undefined with nothing', () => {
+    it('will get undefined with nothing', function() {
       const value = first([]);
       assert.strictEqual(value, undefined);
     });
   });
 
-  describe('highest', () => {
-    it('can get the highest value', () => {
+  describe('highest', function() {
+    it('can get the highest value', function() {
       const value = highest([1, 2, 3]);
       assert.strictEqual(value, 3);
     });
 
-    it('will get undefined with nothing', () => {
+    it('will get undefined with nothing', function() {
       const value = highest([]);
       assert.strictEqual(value, undefined);
     });
   });
 
-  describe('lowest', () => {
-    it('can get the lowest value', () => {
+  describe('lowest', function() {
+    it('can get the lowest value', function() {
       const value = lowest([1, 2, 3]);
       assert.strictEqual(value, 1);
     });
 
-    it('will get undefined with nothing', () => {
+    it('will get undefined with nothing', function() {
       const value = lowest([]);
       assert.strictEqual(value, undefined);
     });
   });
 
-  describe('unique', () => {
-    it('can get the unique values', () => {
+  describe('unique', function() {
+    it('can get the unique values', function() {
       const value = unique([1, 2, 2, 3]);
       assert.strictEqual(value.length, 3);
     });
 
-    it('will get empty array with nothing', () => {
+    it('will get empty array with nothing', function() {
       const value = unique([]);
       assert.strictEqual(value.length, [].length);
     });
 
-    it('can join values', () => {
+    it('can join values', function() {
       const value = unique(['test1', 'test2'], { join: ',' });
       assert.strictEqual(value, 'test1,test2');
     });

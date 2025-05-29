@@ -14,9 +14,9 @@
 import assert from 'assert';
 import { alternateValue, getValue } from '../src/sources.js';
 
-describe('Source Tests', () => {
-  describe('alternateValue', () => {
-    it('can get alternate value', () => {
+describe('Source Tests', function() {
+  describe('alternateValue', function() {
+    it('can get alternate value', function() {
       const value = alternateValue(
         {
           field1: 'nope',
@@ -33,7 +33,7 @@ describe('Source Tests', () => {
       assert.strictEqual(value, 'yep');
     });
 
-    it('will fall back to default', () => {
+    it('will fall back to default', function() {
       const value = alternateValue(
         {
           field1: 'nope',
@@ -51,8 +51,8 @@ describe('Source Tests', () => {
     });
   });
 
-  describe('getValue', () => {
-    it('can get a value', () => {
+  describe('getValue', function() {
+    it('can get a value', function() {
       const value = getValue(
         {
           original: 'test',

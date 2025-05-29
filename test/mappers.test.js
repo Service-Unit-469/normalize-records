@@ -14,15 +14,15 @@
 import assert from 'assert';
 import { notEqual } from '../src/mappers.js';
 
-describe('Mappers Tests', () => {
-  describe('notEqual', () => {
-    it('can match', () => {
+describe('Mappers Tests', function() {
+  describe('notEqual', function() {
+    it('can match', function() {
       const value = notEqual(['test', 'excludeme'], { value: 'excludeme' });
       assert.strictEqual(value.length, 1);
       assert.strictEqual(value[0], 'test');
     });
 
-    it('will work with nothing', () => {
+    it('will work with nothing', function() {
       const value = notEqual([], { value: 'excludeme' });
       assert.strictEqual(value.length, 0);
     });

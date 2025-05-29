@@ -15,7 +15,7 @@ import { readFile, writeFile } from 'fs/promises';
 import { Command } from 'commander';
 import { RecordNormalizer } from './normalizer.js';
 
-// eslint-disable-next-line consistent-return
+ 
 async function readJson(file) {
   try {
     return JSON.parse(await readFile(file));
