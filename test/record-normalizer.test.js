@@ -18,8 +18,8 @@ async function readJson(file) {
   return JSON.parse(await readFile(file));
 }
 
-describe('Record Normalizer Tests', () => {
-  it('simple merge', async () => {
+describe('Record Normalizer Tests', function() {
+  it('simple merge', async function() {
     const normalizer = new RecordNormalizer();
     const records = await readJson('test/res/simple.json');
     const config = await readJson('test/res/config.json');
@@ -27,7 +27,7 @@ describe('Record Normalizer Tests', () => {
     assert.strictEqual(normalized.length, 2);
   });
 
-  it('will fail on missing source', () => {
+  it('will fail on missing source', function() {
     const normalizer = new RecordNormalizer();
     assert.throws(() => normalizer.normalizeRecords([{ id: 1 }, { id: 2 }], {
       primaryKey: 'id',
@@ -41,7 +41,7 @@ describe('Record Normalizer Tests', () => {
     }));
   });
 
-  it('will fail on missing mapper', () => {
+  it('will fail on missing mapper', function() {
     const normalizer = new RecordNormalizer();
     assert.throws(() => normalizer.normalizeRecords([{ id: 1 }, { id: 2 }], {
       primaryKey: 'id',
@@ -55,7 +55,7 @@ describe('Record Normalizer Tests', () => {
     }));
   });
 
-  it('will fail on missing reducer', () => {
+  it('will fail on missing reducer', function() {
     const normalizer = new RecordNormalizer();
     assert.throws(() => normalizer.normalizeRecords([{ id: 1 }, { id: 2 }], {
       primaryKey: 'id',
@@ -69,7 +69,7 @@ describe('Record Normalizer Tests', () => {
     }));
   });
 
-  it('will normalize records', () => {
+  it('will normalize records', function() {
     const normalizer = new RecordNormalizer();
     const result = normalizer.normalizeRecords(
       [
@@ -94,7 +94,7 @@ describe('Record Normalizer Tests', () => {
     assert.strict(result[0].value, [3, 4]);
   });
 
-  it('will skip records without a primary key', () => {
+  it('will skip records without a primary key', function() {
     const normalizer = new RecordNormalizer();
     const result = normalizer.normalizeRecords(
       [{ id: 1, value: 3 }, { value: 4 }],
@@ -116,7 +116,7 @@ describe('Record Normalizer Tests', () => {
     assert.strict(result[0].value, [3]);
   });
 
-  it('can add custom functions', () => {
+  it('can add custom functions', function() {
     const normalizer = new RecordNormalizer();
     normalizer.addSource('customext', () => 'customext');
     normalizer.addMapper('custommap', (values) => values.map((v) => v.replace('customext', 'custommap')));
