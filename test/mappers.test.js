@@ -10,7 +10,6 @@
  * governing permissions and limitations under the License.
  */
 
-/* eslint-env mocha */
 import assert from 'assert';
 import { notEqual } from '../src/mappers.js';
 

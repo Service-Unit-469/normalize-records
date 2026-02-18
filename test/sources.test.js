@@ -10,13 +10,12 @@
  * governing permissions and limitations under the License.
  */
 
-/* eslint-env mocha */
 import assert from 'assert';
 import { alternateValue, getValue } from '../src/sources.js';
 
-describe('Source Tests', function() {
-  describe('alternateValue', function() {
-    it('can get alternate value', function() {
+describe('Source Tests', function () {
+  describe('alternateValue', function () {
+    it('can get alternate value', function () {
       const value = alternateValue(
         {
           field1: 'nope',
@@ -33,7 +32,7 @@ describe('Source Tests', function() {
       assert.strictEqual(value, 'yep');
     });
 
-    it('will fall back to default', function() {
+    it('will fall back to default', function () {
       const value = alternateValue(
         {
           field1: 'nope',
@@ -51,8 +50,8 @@ describe('Source Tests', function() {
     });
   });
 
-  describe('getValue', function() {
-    it('can get a value', function() {
+  describe('getValue', function () {
+    it('can get a value', function () {
       const value = getValue(
         {
           original: 'test',

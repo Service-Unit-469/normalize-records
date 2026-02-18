@@ -270,6 +270,7 @@ class RecordNormalizer {
               `Failed to get values for primaryKey:${key} field:${field} source: ${JSON.stringify(
                 rule.source,
               )}, cause: ${err}`,
+              {cause: err},
             );
           }
 
@@ -280,6 +281,7 @@ class RecordNormalizer {
               `Failed to map values for primaryKey:${key} field:${field} mappers: ${JSON.stringify(
                 rule.mappers,
               )}, cause: ${err}`,
+              {cause: err},
             );
           }
           try {
@@ -289,6 +291,7 @@ class RecordNormalizer {
               `Failed to reduce value for primaryKey:${key} field:${field} reducer: ${JSON.stringify(
                 rule.reducer,
               )}, cause: ${err}`,
+              {cause: err},
             );
           }
         }
