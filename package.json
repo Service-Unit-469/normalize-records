@@ -47,7 +47,7 @@
     "globals": "^17.3.0",
     "jsdoc-tsimport-plugin": "^1.0.5",
     "mocha": "^12.0.0",
-    "semantic-release": "^25.0.1"
+    "semantic-release": "^26.0.1"
   },
   "files": [
     "src/*"
